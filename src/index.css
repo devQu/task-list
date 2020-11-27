@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  color: rgb(74, 74, 255);
+}
+.tacheItem {
+  color: rgb(59, 59, 59);
+  font-weight: 600;
+  margin: 7px;
+}
+.done {
+  text-decoration: line-through;
+}
+.delete {
+  background-color: rgb(255, 81, 81);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  margin-left: 3px;
+}

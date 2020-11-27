@@ -15,7 +15,7 @@ function CustomHookAdd(defaultName='') {
     }
 } 
 
-function Header(props) {
+function FormBlock(props) {
 
     const changerMot = function(e) {
         console.log(e.target.value)
@@ -23,9 +23,7 @@ function Header(props) {
 
     const [view, setView] = useState(true); // pour montrer ou cacher le Composant
     
-    const montrer = function() {
-        setView(!view)
-    };
+    const montrer = () => setView(!view);
 
     const hook = CustomHookAdd('') // '' par default
 
@@ -59,8 +57,8 @@ function Header(props) {
     }
 }
 
-Header.propTypes = {
+FormBlock.propTypes = {
     myFunc: PropTypes.func.isRequired
 }
 
-export default Header
+export default FormBlock

@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './components/Header';
+import FormBlock from './components/FormBlock';
 import Contact from './components/Contact';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -13,16 +13,16 @@ function App() {
   // Par default
   let [taches, change] = useState([
     {title: "Faire qq..", completed: false},
-    {title: "Un petit truc", completed: false},
+    {title: "Un petit truc", completed: true},
     {title: "Pourquoi pas!", completed: false}
   ])
 
   // cote serveur ...
-  useEffect(() => {
-    fetch('http://jsonplaceholder.typicode.com/todos?_limit=5')
-      .then(response => response.json())
-      .then(res => change(res))
-  }, [])
+  // useEffect(() => {
+  //   fetch('http://jsonplaceholder.typicode.com/todos?_limit=5')
+  //     .then(response => response.json())
+  //     .then(res => change(res))
+  // }, [])
 
   const suprime = function(item) {
     change(taches.filter((per => per.title !== item.title))) // trier le tableau d'objets
@@ -41,8 +41,8 @@ function App() {
 
   return (
     <div className="App">
-      Bienvenue!
-      <Header 
+      <h1>Welcome!</h1>
+      <FormBlock 
         myFunc={direMerci}
         onAddPerson = {addPerson} 
         name="Alex" 
