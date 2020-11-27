@@ -29,7 +29,7 @@ function FormBlock(props) {
 
     function callAjout(e) {
         e.preventDefault()
-        props.onAddPerson(hook.value())
+        props.onAddTache(hook.value())
         hook.clear()
     }
 
@@ -58,7 +58,8 @@ function FormBlock(props) {
 }
 
 FormBlock.propTypes = {
-    myFunc: PropTypes.func.isRequired
+    myFunc: PropTypes.func.isRequired,
+    onAddTache: PropTypes.func.isRequired
 }
 
 export default FormBlock

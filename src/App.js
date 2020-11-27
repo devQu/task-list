@@ -17,19 +17,19 @@ function App() {
     {title: "Pourquoi pas!", completed: false}
   ])
 
-  // cote serveur ...
-  // useEffect(() => {
-  //   fetch('http://jsonplaceholder.typicode.com/todos?_limit=5')
-  //     .then(response => response.json())
-  //     .then(res => change(res))
-  // }, [])
+  //cote serveur ...
+  useEffect(() => {
+    fetch('http://jsonplaceholder.typicode.com/todos?_limit=5')
+      .then(response => response.json())
+      .then(res => change(res))
+  }, [])
 
   const suprime = function(item) {
     change(taches.filter((per => per.title !== item.title))) // trier le tableau d'objets
   }
 
-  const addPerson = function(item) {
-    change(taches.concat({ title: item }))
+  const addTache = function(item) {
+    change(taches.concat({ title: item, comleted: false }))
   }
 
   const changecheck = function(id) {
@@ -44,7 +44,7 @@ function App() {
       <h1>Welcome!</h1>
       <FormBlock 
         myFunc={direMerci}
-        onAddPerson = {addPerson} 
+        onAddTache = {addTache} 
         name="Alex" 
       />
       {taches.map((pers, index) => {
