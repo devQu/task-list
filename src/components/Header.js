@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function CustomHookAdd(defaultName='') {
     const [valueperson, setValuePerson] = useState(defaultName)
@@ -20,7 +21,7 @@ function Header(props) {
         console.log(e.target.value)
     }
 
-    const [view, setView] = useState(true); // pour montrer ou cacher ce Composant
+    const [view, setView] = useState(true); // pour montrer ou cacher le Composant
     
     const montrer = function() {
         setView(!view)
@@ -56,6 +57,10 @@ function Header(props) {
             </div>
         )
     }
+}
+
+Header.propTypes = {
+    myFunc: PropTypes.func.isRequired
 }
 
 export default Header

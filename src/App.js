@@ -11,7 +11,7 @@ function App() {
   }
  
   // Par default
-  const [taches, change] = useState([
+  let [taches, change] = useState([
     {title: "Faire qq..", completed: false},
     {title: "Un petit truc", completed: false},
     {title: "Pourquoi pas!", completed: false}
@@ -32,6 +32,13 @@ function App() {
     change(taches.concat({ title: item }))
   }
 
+  const changecheck = function(id) {
+    change(taches.map((el, i) => {
+      if (i === id) { el.completed = !el.completed; console.log(el); }
+      return el
+    }))
+  }
+
   return (
     <div className="App">
       Bienvenue!
@@ -44,7 +51,10 @@ function App() {
         return <Contact 
           key = {index}
           onDel = {suprime.bind(taches, pers)} // ou on peut utiliser une fonction de rappel
-          title = {pers.title}  
+          onCheck = {changecheck}
+          title = {pers.title}
+          index = {index}
+          completed = {pers.completed}  
         />
       })}
     </div>

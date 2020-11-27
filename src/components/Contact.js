@@ -1,8 +1,12 @@
-export default props => {
+function Contact(props) {
 
-return (
-    <div>
-        {props.title} <button onClick={props.onDel}>Supprimer!</button>
-    </div>
-)
-}
+    return (
+        <div>
+            <input type="checkbox" checked={props.completed} onChange={() => props.onCheck(props.index)}></input>
+            {props.title} 
+            <button onClick={props.onDel}>Supprimer!</button>
+        </div>
+    )
+    }
+
+export default Contact;
