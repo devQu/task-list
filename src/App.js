@@ -25,7 +25,7 @@ function App() {
   }, [])
 
   const suprime = function(item) {
-    change(taches.filter((per => per.title !== item.title))) // trier le tableau d'objets
+    change(taches.filter((per => per.title !== item.title))) // trier le tableau d'objets => supprimer un element
   }
 
   const addTache = function(item) {
@@ -50,7 +50,7 @@ function App() {
       {taches.map((pers, index) => {
         return <Contact 
           key = {index}
-          onDel = {suprime.bind(taches, pers)} // ou on peut utiliser une fonction de rappel
+          onDel = {suprime.bind(null, pers)} // ou on peut utiliser une fonction de rappel
           onCheck = {changecheck}
           title = {pers.title}
           index = {index}
