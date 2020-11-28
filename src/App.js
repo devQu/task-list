@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import FormBlock from './components/FormBlock';
 import Contact from './components/Contact';
 import { useState } from 'react';
