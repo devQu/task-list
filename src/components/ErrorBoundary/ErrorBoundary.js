@@ -11,7 +11,7 @@ export default class ErrorBoundary extends React.Component {
     }
 
     render() {
-        if (this.state.errorLength) return <div style={{color: "red"}}>The name is too long!</div>
+        if (this.state.errorLength) return <div style={{color: "red"}}>The name is too long! It is incorrect..</div>
         return this.props.children
     }
 

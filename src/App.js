@@ -30,7 +30,7 @@ function App() {
   }
 
   const addTache = function(item) {
-    change(taches.concat({ title: item, comleted: false }))
+    change(taches.concat({ title: item, completed: false }))
   }
 
   const changecheck = function(id) {
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome!</h1>
+      <h1>Your tasks at the moment</h1>
       <FormBlock 
         myFunc={direMerci}
         onAddTache = {addTache} 
