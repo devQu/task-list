@@ -1,7 +1,12 @@
-function Contact(props) {
+function Tache(props) {
 
     let classes = ["tacheItem"]
     if (props.completed) classes.push("done")
+
+    // ErrorBoundary
+    if (props.title.length >= 60) {
+        throw new Error("The task name is too long!")
+    }
 
     return (
         <div className={classes.join(' ')}>
@@ -12,4 +17,4 @@ function Contact(props) {
     )
 }
 
-export default Contact;
+export default Tache;

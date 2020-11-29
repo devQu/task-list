@@ -1,6 +1,7 @@
 import './App.scss';
 import FormBlock from './components/FormBlock';
-import Contact from './components/Contact';
+import Tache from './components/Tache';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -48,14 +49,15 @@ function App() {
         name="Alex" 
       />
       {taches.map((pers, index) => {
-        return <Contact 
-          key = {index}
-          onDel = {suprime.bind(null, pers)} // ou on peut utiliser une fonction de rappel
-          onCheck = {changecheck}
-          title = {pers.title}
-          index = {index}
-          completed = {pers.completed}  
+        return <ErrorBoundary key = {index}>
+          <Tache 
+            onDel = {suprime.bind(null, pers)} // ou on peut utiliser une fonction de rappel
+            onCheck = {changecheck}
+            title = {pers.title}
+            index = {index}
+            completed = {pers.completed}  
         />
+        </ErrorBoundary>
       })}
     </div>
   );
